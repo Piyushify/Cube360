@@ -1,8 +1,11 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: #6E6E6E;
+    background-color: 
+    black;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -12,19 +15,53 @@ body {
     perspective-origin: 
     50% calc(50% - 4em);
 }
+header {
+  position: fixed;
+  top: 0;
+}
+header h1 {
+  text-align: center;
+  font-size: .65em;
+  font-weight: bold;
+  
+}
+header h1 span:nth-child(1) {
+  color: red;
+}
+header h1 span:nth-child(2) {
+  color: yellow;
+}
+header h1 span:nth-child(3) {
+  color: orange;
+}
+header h1 span:nth-child(4) {
+  color: blue;
+}
+header h1 span:nth-child(5) {
+  color: green;
+}
+header h1 span:nth-child(6) {
+  color: white;
+}
+header h1 span:nth-child(7) {
+  color: red;
+}
+header h1 span:nth-child(8) {
+  color: yellow;
+}
+header h1 span:nth-child(9) {
+  color: orange;
+}
+header h1 span:nth-child(10) {
+  color: blue;
+}
+header h1 span:nth-child(11) {
+  color: green;
+}
 .scene {
     position: relative;
     transform-style: preserve-3d;
 }
-/*.ball {
-    position: absolute;
-    left: -.5em;
-    bottom: 1em;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    background: lightblue;
-}*/
 .cube {
     position: absolute;
     top: -1em;
@@ -46,17 +83,22 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    border: .05em solid;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    background: black;
+    border-radius: 15%;
+    backface-visibility: hidden;
 }
-.cube div > div {
+.cube > div > div {
     border: .05em solid black;
+    backface-visibility: hidden;
 }
 .front {
     transform:
     translateZ(1em);
+}
+.front > div{
     background: 
     hsla(0, 100%, 50%, 1);
 }
@@ -64,6 +106,8 @@ body {
     transform:
     rotateY(180deg)
     translateZ(1em);
+}
+.back > div{
     background: 
     hsla(40, 100%, 50%, 1);
 }
@@ -71,6 +115,8 @@ body {
     transform: 
     rotateY(270deg) 
     translateZ(1em);
+}
+.left > div {
     background: 
     hsla(250, 100%, 50%, 1);
 }
@@ -78,6 +124,8 @@ body {
     transform: 
     rotateY(90deg) 
     translateZ(1em);
+}
+.right > div {
     background: 
     hsla(100, 100%, 50%, 1);
 }
@@ -85,6 +133,8 @@ body {
     transform: 
     rotateX(90deg)
     translateZ(1em);
+}
+.top > div {
     background: 
     hsla(50, 100%, 50%, 1);
 }
@@ -92,22 +142,35 @@ body {
     transform: 
     rotateX(-90deg)
     translateZ(1em);
+}
+.bottom > div {
     background: 
     hsla(0, 0%, 100%, 1);
 }
-/*.floor {
-    position: absolute;
-    top: 1em;
-    left: 50%;
-    transform: 
-    translate(-50%, -50%)
-    rotateX(90deg);
-    width: 15em;
-    height: 15em;
-    background-image:
-    repeating-conic-gradient(
-    from 45deg,
-    #111 0deg 90deg,
-    #222 90deg 180deg);
-    background-size: 1em 1em;
-}*/
+.b1 {
+    border-radius: 15% 15% 25% 15%;
+}
+.b2 {
+    border-radius: 15% 15% 25% 25%;
+}
+.b3 {
+    border-radius: 15% 15% 15% 25%;
+}
+.b4 {
+    border-radius: 15% 25% 25% 15%;
+}
+.b5 {
+    border-radius: 25% 25% 25% 25%;
+}
+.b6 {
+    border-radius: 25% 15% 15% 25%;
+}
+.b7 {
+    border-radius: 15% 25% 15% 15%;
+}
+.b8 {
+    border-radius: 25% 25% 15% 15%;
+}
+.b9 {
+    border-radius: 25% 15% 15% 15%;
+}
