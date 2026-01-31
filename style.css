@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #6E6E6E;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    perspective: 20em;
+    perspective-origin: 
+    50% calc(50% - 4em);
+}
+.scene {
+    position: relative;
+    transform-style: preserve-3d;
+}
+/*.ball {
+    position: absolute;
+    left: -.5em;
+    bottom: 1em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: lightblue;
+}*/
+.cube {
+    position: absolute;
+    top: -1em;
+    left: -1em;
+    width: 2em;
+    height: 2em;
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {
+    from { transform:
+    rotateY(0deg)
+    rotateZ(0deg); }
+    to   { transform:
+    rotateY(360deg)
+    rotateZ(360deg); }
+}
+.cube > div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: .05em solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.cube div > div {
+    border: .05em solid black;
+}
+.front {
+    transform:
+    translateZ(1em);
+    background: 
+    hsla(0, 100%, 50%, 1);
+}
+.back {
+    transform:
+    rotateY(180deg)
+    translateZ(1em);
+    background: 
+    hsla(40, 100%, 50%, 1);
+}
+.left {
+    transform: 
+    rotateY(270deg) 
+    translateZ(1em);
+    background: 
+    hsla(250, 100%, 50%, 1);
+}
+.right {
+    transform: 
+    rotateY(90deg) 
+    translateZ(1em);
+    background: 
+    hsla(100, 100%, 50%, 1);
+}
+.top {
+    transform: 
+    rotateX(90deg)
+    translateZ(1em);
+    background: 
+    hsla(50, 100%, 50%, 1);
+}
+.bottom {
+    transform: 
+    rotateX(-90deg)
+    translateZ(1em);
+    background: 
+    hsla(0, 0%, 100%, 1);
+}
+/*.floor {
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform: 
+    translate(-50%, -50%)
+    rotateX(90deg);
+    width: 15em;
+    height: 15em;
+    background-image:
+    repeating-conic-gradient(
+    from 45deg,
+    #111 0deg 90deg,
+    #222 90deg 180deg);
+    background-size: 1em 1em;
+}*/
