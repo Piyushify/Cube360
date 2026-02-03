@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+#body {
     background-color: var(--base);
     min-height: 100vh;
     display: flex;
@@ -19,6 +19,7 @@ body {
     50% calc(50% - 4em);
     font-family: "Jersey 10";
     letter-spacing: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 header {
   position: fixed;
@@ -30,6 +31,13 @@ header h1 {
   font-weight: bold;
   margin: auto;
   color: var(--baseRev);
+}
+#switcher {
+    color: red;
+}
+#switch:checked ~ #body {
+  --base: #2B2B2B;
+  --baseRev: #F6F6F6;
 }
 .scene {
     position: relative;
