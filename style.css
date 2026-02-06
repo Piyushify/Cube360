@@ -164,3 +164,19 @@ footer {
     margin-bottom: 1em;
     color: var(--baseRev);
 }
+footer h6 a {
+    font-size: 1px;
+    color: var(--base);
+}
+.rotate {
+    position: absolute;
+    height: 0.4em;
+    width: 0.4em;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#toggleRotate:checked ~ #body .cube {
+  animation-play-state: paused;
+  transition: animation-play-state 0.5s ease;
+}
