@@ -34,10 +34,17 @@ header h1 {
 }
 #switcher {
     color: red;
+    cursor: pointer;
 }
 #switch:checked ~ #body {
   --base: #2B2B2B;
   --baseRev: #F6F6F6;
+}
+#switch:checked ~ #body .rotateL {
+  display: none;
+}
+#switch:checked ~ #body .rotateD {
+  display: inline-block;
 }
 .scene {
     position: relative;
@@ -164,19 +171,26 @@ footer {
     margin-bottom: 1em;
     color: var(--baseRev);
 }
-footer h6 a {
-    font-size: 1px;
-    color: var(--base);
-}
-.rotate {
+.rotateL {
+    display: inline-block;
     position: absolute;
     height: 0.4em;
     width: 0.4em;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;
+}
+.rotateD {
+    display: none;
+    position: absolute;
+    height: 0.4em;
+    width: 0.4em;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;
 }
 #toggleRotate:checked ~ #body .cube {
   animation-play-state: paused;
-  transition: animation-play-state 0.5s ease;
 }
