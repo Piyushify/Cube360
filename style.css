@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #2B2B2B;
+    font-size: 75px;
+}
+.scene {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+}
+.cube {
+    height: 2em;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+    100% {
+    transform: rotateX(360deg) rotateY(360deg);
+}
+}
+.cube div {
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    grid-template-columns: repeat(3 , 1fr);
+}
+.cube .front {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: red;
+    transform: translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
+.cube .back {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: orange;
+    transform: rotateY(180deg) translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
+.cube .left {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: blue;
+    transform: rotateY(90deg) translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
+.cube .right {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: green;
+    transform: rotateY(-90deg) translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
+.cube .top {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: white;
+    transform: rotateX(90deg) translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
+.cube .bottom {
+    position: absolute;
+    height: 2em;
+    aspect-ratio: 1;
+    background: yellow;
+    transform: rotateX(-90deg) translateZ(1em);
+    border-radius: 15px;
+    border: 4px solid #2B2B2B;
+    backface-visibility: hidden;
+}
