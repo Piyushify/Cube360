@@ -7,14 +7,14 @@ body {
     background-color: #2B2B2B;
     font-size: 75px;
 }
-.scene {
+#scene {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 500px;
 }
-.cube {
+#cube {
     height: 2em;
     aspect-ratio: 1;
     transform-style: preserve-3d;
@@ -31,65 +31,55 @@ body {
     transform: rotateX(360deg) rotateY(360deg);
 }
 }
-.cube div {
+.face {
     display: grid;
+    height: 2em;
+    aspect-ratio: 1;
     grid-template-rows: repeat(3 , 1fr);
     grid-template-columns: repeat(3 , 1fr);
 }
-.cube .front {
+#cube .front {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: red;
     transform: translateZ(1em);
     border-radius: 15px;
     border: 4px solid #2B2B2B;
     backface-visibility: hidden;
 }
-.cube .back {
+#cube .back {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: orange;
     transform: rotateY(180deg) translateZ(1em);
     border-radius: 15px;
     border: 4px solid #2B2B2B;
     backface-visibility: hidden;
 }
-.cube .left {
+#cube .left {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: blue;
     transform: rotateY(90deg) translateZ(1em);
     border-radius: 15px;
     border: 4px solid #2B2B2B;
     backface-visibility: hidden;
 }
-.cube .right {
+#cube .right {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: green;
     transform: rotateY(-90deg) translateZ(1em);
     border-radius: 15px;
     border: 4px solid #2B2B2B;
     backface-visibility: hidden;
 }
-.cube .top {
+#cube .top {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: white;
     transform: rotateX(90deg) translateZ(1em);
     border-radius: 15px;
     border: 4px solid #2B2B2B;
     backface-visibility: hidden;
 }
-.cube .bottom {
+#cube .bottom {
     position: absolute;
-    height: 2em;
-    aspect-ratio: 1;
     background: yellow;
     transform: rotateX(-90deg) translateZ(1em);
     border-radius: 15px;
