@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Jersey 10";
+  src: url("fonts/Jersey10-Regular.ttf") format("truetype");
+}
+:root {
+    --c1: red;
+    --c2: orange;
+    --c3: blue;
+    --c4: green;
+    --c5: white;
+    --c6: yellow;
+}
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +26,42 @@ body {
     align-items: center;
     perspective: 500px;
 }
+#name {
+    position: fixed;
+    top: 0;
+    font-size: 3.5rem;
+    font-family: "Jersey 10";
+}
+#name span:nth-child(1) {
+    color: var(--c1);
+}
+
+#name span:nth-child(2) {
+    color: var(--c2);
+}
+#name span:nth-child(3) {
+    color: var(--c3);
+}
+#name span:nth-child(4) {
+    color: var(--c4);
+}
+#name span:nth-child(5) {
+    color: var(--c5);
+}
+#name span:nth-child(6) {
+    color: var(--c6);
+}
+#name span:nth-child(7) {
+    color: var(--c2);
+}
+#name span:nth-child(8) {
+    color: var(--c1);
+}
 #cube {
     height: 180px;
     aspect-ratio: 1;
     transform-style: preserve-3d;
     animation: rotate 5s linear infinite;
-    background: blue;
 }
 @keyframes rotate {
     0% {
@@ -38,162 +80,6 @@ body {
     aspect-ratio: 1;
     transform-style: preserve-3d;
 }
-.cubie:nth-child(1) {
-    transform: 
-    translateX(-60px)
-    translateY(-60px)
-    translateZ(60px);
-}
-.cubie:nth-child(2) {
-    transform: 
-    translateX(0px)
-    translateY(-60px)
-    translateZ(60px);
-}
-.cubie:nth-child(3) {
-    transform: 
-    translateX(60px)
-    translateY(-60px)
-    translateZ(60px);
-}
-.cubie:nth-child(4) {
-    transform: 
-    translateX(-60px)
-    translateY(0px)
-    translateZ(60px);
-}
-.cubie:nth-child(5) {
-    transform: 
-    translateX(0px)
-    translateY(0px)
-    translateZ(60px);
-}
-.cubie:nth-child(6) {
-    transform: 
-    translateX(60px)
-    translateY(0px)
-    translateZ(60px);
-}
-.cubie:nth-child(7) {
-    transform: 
-    translateX(-60px)
-    translateY(60px)
-    translateZ(60px);
-}
-.cubie:nth-child(8) {
-    transform: 
-    translateX(0px)
-    translateY(60px)
-    translateZ(60px);
-}
-.cubie:nth-child(9) {
-    transform: 
-    translateX(60px)
-    translateY(60px)
-    translateZ(60px);
-}
-.cubie:nth-child(10) {
-    transform: 
-    translateX(-60px)
-    translateY(-60px)
-    translateZ(0px);
-}
-.cubie:nth-child(11) {
-    transform: 
-    translateX(0px)
-    translateY(-60px)
-    translateZ(0px);
-}
-.cubie:nth-child(12) {
-    transform: 
-    translateX(60px)
-    translateY(-60px)
-    translateZ(0px);
-}
-.cubie:nth-child(13) {
-    transform: 
-    translateX(-60px)
-    translateY(0px)
-    translateZ(0px);
-}
-.cubie:nth-child(14) {
-    transform: 
-    translateX(60px)
-    translateY(0px)
-    translateZ(0px);
-}
-.cubie:nth-child(15) {
-    transform: 
-    translateX(-60px)
-    translateY(60px)
-    translateZ(0px);
-}
-.cubie:nth-child(16) {
-    transform: 
-    translateX(0px)
-    translateY(60px)
-    translateZ(0px);
-}
-.cubie:nth-child(17) {
-    transform: 
-    translateX(60px)
-    translateY(60px)
-    translateZ(0px);
-}
-.cubie:nth-child(18) {
-    transform: 
-    translateX(-60px)
-    translateY(-60px)
-    translateZ(-60px);
-}
-.cubie:nth-child(19) {
-    transform: 
-    translateX(0px)
-    translateY(-60px)
-    translateZ(-60px);
-}
-.cubie:nth-child(20) {
-    transform: 
-    translateX(60px)
-    translateY(-60px)
-    translateZ(-60px);
-}
-.cubie:nth-child(21) {
-    transform: 
-    translateX(-60px)
-    translateY(0px)
-    translateZ(-60px);
-}
-.cubie:nth-child(22) {
-    transform: 
-    translateX(0px)
-    translateY(0px)
-    translateZ(-60px);
-}
-.cubie:nth-child(23) {
-    transform: 
-    translateX(60px)
-    translateY(0px)
-    translateZ(-60px);
-}
-.cubie:nth-child(24) {
-    transform: 
-    translateX(-60px)
-    translateY(60px)
-    translateZ(-60px);
-}
-.cubie:nth-child(25) {
-    transform: 
-    translateX(0px)
-    translateY(60px)
-    translateZ(-60px);
-}
-.cubie:nth-child(26) {
-    transform: 
-    translateX(60px)
-    translateY(60px)
-    translateZ(-60px);
-}
 
 #core {
     position: relative;
@@ -203,45 +89,45 @@ body {
     transform: translate(-50%, -50%);
     height: 60px;
     aspect-ratio: 1;
-    background: red;
 }
 .face {
     position: absolute;
     height: 60px;
     aspect-ratio: 1;
     border: 2px solid;
+    border-radius: 10px;
 }
 .front {
-    background: red;
+    background-color: var(--c1);
     transform: translateZ(30px);
     backface-visibility: hidden;
 }
 .back {
-    background: orange;
+    background-color: var(--c2);
     transform: 
     rotateY(180deg)
     translateZ(30px);
 }
 .left {
-    background: blue;
+    background-color: var(--c3);
     transform: 
     rotateY(-90deg)
     translateZ(30px);
 }
 .right {
-    background: green;
+    background-color: var(--c4);
     transform: 
     rotateY(90deg)
     translateZ(30px);
 }
 .top {
-    background: white;
+    background-color: var(--c5);
     transform: 
     rotateX(90deg)
     translateZ(30px);
 }
 .bottom {
-    background: yellow;
+    background-color: var(--c6);
     transform: 
     rotateX(-90deg)
     translateZ(30px);
