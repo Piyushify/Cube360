@@ -9,6 +9,7 @@
     --c4: green;
     --c5: white;
     --c6: yellow;
+    --back: #2B2B2B;
 }
 * {
     margin: 0;
@@ -16,15 +17,14 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #2B2B2B;
-    font-size: 75px;
+    background-color: var(--back);
 }
 #scene {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 500px;
+    perspective: 1000px;
 }
 #name {
     position: fixed;
@@ -33,26 +33,26 @@ body {
     font-family: "Jersey 10";
 }
 #name span:nth-child(1) {
-    color: var(--c1);
+    color: var(--c2);
 }
 
 #name span:nth-child(2) {
-    color: var(--c2);
-}
-#name span:nth-child(3) {
     color: var(--c3);
 }
-#name span:nth-child(4) {
+#name span:nth-child(3) {
     color: var(--c4);
 }
-#name span:nth-child(5) {
-    color: var(--c5);
-}
-#name span:nth-child(6) {
+#name span:nth-child(4) {
     color: var(--c6);
 }
-#name span:nth-child(7) {
+#name span:nth-child(5) {
     color: var(--c2);
+}
+#name span:nth-child(6) {
+    color: var(--c3);
+}
+#name span:nth-child(7) {
+    color: var(--c4);
 }
 #name span:nth-child(8) {
     color: var(--c1);
@@ -94,8 +94,9 @@ body {
     position: absolute;
     height: 60px;
     aspect-ratio: 1;
-    border: 2px solid;
+    border: 2px solid var(--back);
     border-radius: 10px;
+    backface-visibility: hidden;
 }
 .front {
     background-color: var(--c1);

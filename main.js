@@ -1,6 +1,5 @@
 console.log('JS Connected!');
 const core = document.getElementById("core");
-const facing = ["front","back","left","right","top","bottom"];
 let num = 1;
 function create() {
   for (let z = 1; z >= -1; z--) {
@@ -14,21 +13,21 @@ function create() {
           translateY(${y*60}px)
           translateZ(${z*60}px)`;
           core.appendChild(cubie);
-          for (let j = 0; j < 6; j++) {
+          
+          function facing(name) {
             let face = document.createElement("div");
-            face.classList.add("face");
-            face.classList.add(facing[j]);
-            if (facing[j] === "front") {
-            face.textContent = num;
-            face.style.fontSize = 30 + "px";
-          }
+            face.classList.add("face",name);
             cubie.appendChild(face);
+            }
+            if (z === 1) facing("front");
+            if (z === -1) facing("back");
+            if (x === -1) facing("left");
+            if (x === 1) facing("right");
+            if (y === -1) facing("top");
+            if (y === 1) facing("bottom");
           }
-          num++;
-
         }
       }
     }
-}
 create();
 
