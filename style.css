@@ -9,15 +9,13 @@
     --c4: green;
     --c5: white;
     --c6: yellow;
-    --back: #2B2B2B;
+    --base: #F2F2F2;
+    --base1: #2F2F2F;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body {
-    background-color: var(--back);
 }
 #scene {
     height: 100vh;
@@ -25,12 +23,14 @@ body {
     justify-content: center;
     align-items: center;
     perspective: 1000px;
+    background-color: var(--base);
 }
 #name {
     position: fixed;
-    top: 0;
-    font-size: 3.5rem;
+    top: 6px;
+    font-size: 4rem;
     font-family: "Jersey 10";
+    letter-spacing: 3px;
 }
 #name span:nth-child(1) {
     color: var(--c2);
@@ -54,8 +54,13 @@ body {
 #name span:nth-child(7) {
     color: var(--c4);
 }
-#name span:nth-child(8) {
+#name label {
+    position: absolute;
+    top: 6px;
+    font-family: "Jersey 10";
+    font-size: 4rem;
     color: var(--c1);
+    
 }
 #cube {
     height: 180px;
@@ -79,6 +84,7 @@ body {
     height: 60px;
     aspect-ratio: 1;
     transform-style: preserve-3d;
+    border-radius: 20px;
 }
 
 #core {
@@ -95,40 +101,76 @@ body {
     height: 60px;
     aspect-ratio: 1;
     border: 2px solid var(--back);
-    border-radius: 10px;
+    border-radius: 6px;
     backface-visibility: hidden;
 }
 .front {
-    background-color: var(--c1);
     transform: translateZ(30px);
 }
 .back {
-    background-color: var(--c2);
     transform: 
     rotateY(180deg)
     translateZ(30px);
 }
 .left {
-    background-color: var(--c3);
     transform: 
     rotateY(-90deg)
     translateZ(30px);
 }
 .right {
-    background-color: var(--c4);
     transform: 
     rotateY(90deg)
     translateZ(30px);
 }
 .top {
-    background-color: var(--c5);
     transform: 
     rotateX(90deg)
     translateZ(30px);
 }
 .bottom {
-    background-color: var(--c6);
     transform: 
     rotateX(-90deg)
     translateZ(30px);
+}
+.front::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c1);
+}
+.back::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c2);
+}
+.left::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c3);
+}
+.right::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c4);
+}
+.top::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c5);
+}
+.bottom::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 6px;
+    background: var(--c6);
 }
