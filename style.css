@@ -9,7 +9,7 @@
     --c4: #00FF00;
     --c5: #FFFFFF;
     --c6: #FFFF00;
-    --h: 180px;
+    --h: 150px;
     --s: calc(var(--h)/3);
 	--ss: calc(var(--s)/2);
 }
