@@ -15,9 +15,11 @@
 }
 .light {
 	--base: #F1F1F2FF;
+	--baseopp: #2B2B2BFF;
 }
 .dark {
 	--base: #2B2B2BFF;
+	--baseopp: #F1F1F2FF;
 }
 * {
     margin: 0;
@@ -38,6 +40,7 @@
     font-size: 4rem;
     font-family: "Jersey 10";
     letter-spacing: 3px;
+    -webkit-text-stroke: 0.1px #2B2B2BBB;
 }
 #name span:nth-child(1) {
     color: var(--c2);
@@ -69,6 +72,7 @@
     color: var(--c1);
     background: none;
     border: none;
+    -webkit-text-stroke: 2px color-mix(in srgb, var(--baseopp) 60%, transparent);
     
 }
 #cube {
@@ -179,4 +183,28 @@
     inset: 5px;
     border-radius: 6px;
     background: var(--c6);
+}
+footer {
+	position: fixed;
+	font-family: "Jersey 10";
+	bottom: 0;
+	right: 0;
+	margin: 1rem;
+	margin-right: 3rem;
+	font-size: 18px;
+}
+footer a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	color: var(--baseopp);
+}
+footer a:active {
+	font-size: 15px;
+}
+footer img {
+	position: absolute;
+	height: 1.5rem;
+	bottom: 0;
+	margin-left: 6px;
+	
 }
