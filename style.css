@@ -3,14 +3,21 @@
   src: url("fonts/Jersey10-Regular.ttf") format("truetype");
 }
 :root {
-    --c1: red;
-    --c2: orange;
-    --c3: blue;
-    --c4: green;
-    --c5: white;
-    --c6: yellow;
-    --base: #F2F2F2;
-    --base1: #2F2F2F;
+    --c1: #FF0000;
+    --c2: #FFA500;
+    --c3: #0000FF;
+    --c4: #00FF00;
+    --c5: #FFFFFF;
+    --c6: #FFFF00;
+    --h: 180px;
+    --s: calc(var(--h)/3);
+	--ss: calc(var(--s)/2);
+}
+.light {
+	--base: #F1F1F2FF;
+}
+.dark {
+	--base: #2B2B2BFF;
 }
 * {
     margin: 0;
@@ -54,16 +61,18 @@
 #name span:nth-child(7) {
     color: var(--c4);
 }
-#name label {
+#name button {
     position: absolute;
-    top: 6px;
+    top: 0;
     font-family: "Jersey 10";
     font-size: 4rem;
     color: var(--c1);
+    background: none;
+    border: none;
     
 }
 #cube {
-    height: 180px;
+    height: var(--h);
     aspect-ratio: 1;
     transform-style: preserve-3d;
     animation: rotate 5s linear infinite;
@@ -81,96 +90,93 @@
 }
 .cubie {
     position: absolute;
-    height: 60px;
+    height: var(--h);
     aspect-ratio: 1;
     transform-style: preserve-3d;
-    border-radius: 20px;
 }
-
 #core {
     position: relative;
     transform-style: preserve-3d;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 60px;
+    height: var(--s);
     aspect-ratio: 1;
 }
 .face {
     position: absolute;
-    height: 60px;
+    height: var(--s);
     aspect-ratio: 1;
-    border: 2px solid var(--back);
     border-radius: 6px;
     backface-visibility: hidden;
 }
 .front {
-    transform: translateZ(30px);
+    transform: translateZ(var(--ss));
 }
 .back {
     transform: 
     rotateY(180deg)
-    translateZ(30px);
+    translateZ(var(--ss));
 }
 .left {
     transform: 
     rotateY(-90deg)
-    translateZ(30px);
+    translateZ(var(--ss));
 }
 .right {
     transform: 
     rotateY(90deg)
-    translateZ(30px);
+    translateZ(var(--ss));
 }
 .top {
     transform: 
     rotateX(90deg)
-    translateZ(30px);
+    translateZ(var(--ss));
 }
 .bottom {
     transform: 
     rotateX(-90deg)
-    translateZ(30px);
+    translateZ(var(--ss));
 }
 .front::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c1);
 }
 .back::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c2);
 }
 .left::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c3);
 }
 .right::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c4);
 }
 .top::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c5);
 }
 .bottom::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 5px;
     border-radius: 6px;
     background: var(--c6);
 }

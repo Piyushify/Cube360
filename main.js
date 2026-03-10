@@ -1,4 +1,10 @@
 console.log('JS Connected!');
+const root = document.documentElement;
+
+let h = getComputedStyle(root).getPropertyValue('--h').trim();
+h = parseFloat(h);
+
+let s = h / 3;
 const core = document.getElementById("core");
 let num = 1;
 function create() {
@@ -9,9 +15,9 @@ function create() {
           let cubie = document.createElement("div");
           cubie.classList.add("cubie");
           cubie.style.transform =
-          `translateX(${x*60}px)
-          translateY(${y*60}px)
-          translateZ(${z*60}px)`;
+          `translateX(${x*s}px)
+          translateY(${y*s}px)
+          translateZ(${z*s}px)`;
           core.appendChild(cubie);
           
           function facing(name) {
@@ -30,4 +36,10 @@ function create() {
       }
     }
 create();
-
+function switchTheme() {
+  if (root.classList.contains("light")) {
+    root.classList.replace("light", "dark");
+  } else {
+    root.classList.replace("dark", "light");
+  }
+}
