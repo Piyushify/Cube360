@@ -100,7 +100,6 @@ body {
 .front {
     background-color: var(--c1);
     transform: translateZ(30px);
-    backface-visibility: hidden;
 }
 .back {
     background-color: var(--c2);
