@@ -6,7 +6,6 @@ h = parseFloat(h);
 
 let s = h / 3;
 const core = document.getElementById("core");
-let num = 1;
 function create() {
   for (let z = 1; z >= -1; z--) {
     for (let y = -1; y <= 1; y++) {
@@ -20,22 +19,23 @@ function create() {
           translateZ(${z*s}px)`;
           core.appendChild(cubie);
           
-          function facing(name) {
-            let face = document.createElement("div");
-            face.classList.add("face",name);
-            cubie.appendChild(face);
-            }
-            if (z === 1) facing("front");
-            if (z === -1) facing("back");
-            if (x === -1) facing("left");
-            if (x === 1) facing("right");
-            if (y === -1) facing("top");
-            if (y === 1) facing("bottom");
+          
+            if (z === 1) facing(cubie,"front");
+            if (z === -1) facing(cubie,"back");
+            if (x === -1) facing(cubie,"left");
+            if (x === 1) facing(cubie,"right");
+            if (y === -1) facing(cubie,"top");
+            if (y === 1) facing(cubie,"bottom");
           }
         }
       }
     }
 create();
+function facing(cubie,name) {
+            let face = document.createElement("div");
+            face.classList.add("face",name);
+            cubie.appendChild(face);
+            }
 function switchTheme() {
   if (root.classList.contains("light")) {
     root.classList.replace("light", "dark");

@@ -90,7 +90,7 @@
 }
 .cubie {
     position: absolute;
-    height: var(--h);
+    height: var(--s);
     aspect-ratio: 1;
     transform-style: preserve-3d;
 }
