@@ -75,11 +75,17 @@
     -webkit-text-stroke: 2px color-mix(in srgb, var(--baseopp) 60%, transparent);
     
 }
+#controller {
+	transform-style: preserve-3d;
+}
 #cube {
     height: var(--h);
     aspect-ratio: 1;
     transform-style: preserve-3d;
     animation: rotate 5s linear infinite;
+}
+#control:checked + label #cube {
+	animation-play-state: paused;
 }
 @keyframes rotate {
     0% {
