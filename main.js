@@ -40,29 +40,29 @@ function create() {
         //append the cubie to the core
         core.appendChild(cubie);
           
-          //apply the classes according to their placement via the facing function
+        //apply the classes according to their placement via the facing function
           
-          //front face
-          if (z === 1) facing(cubie,"front");
+        //front face
+        if (z === 1) facing(cubie,"front");
           
-          //back face
-          if (z === -1) facing(cubie,"back");
+        //back face
+        if (z === -1) facing(cubie,"back");
           
-          //left face
-          if (x === -1) facing(cubie,"left");
+        //left face
+        if (x === -1) facing(cubie,"left");
           
-          //right face
-          if (x === 1) facing(cubie,"right");
+        //right face
+        if (x === 1) facing(cubie,"right");
           
-          //top face
-          if (y === -1) facing(cubie,"top");
+        //top face
+        if (y === -1) facing(cubie,"top");
           
-          //bottom face
-          if (y === 1) facing(cubie,"bottom");
-          }
+        //bottom face
+        if (y === 1) facing(cubie,"bottom");
         }
       }
     }
+  }
     
 //call the function create()
 create();

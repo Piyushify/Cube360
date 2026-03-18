@@ -5,6 +5,7 @@
 }
 
 /*:root denotes the <html> tag*/
+/*all the global variables*/
 :root {
     --c1: #00FF00;
     --c2: #0000FF;
